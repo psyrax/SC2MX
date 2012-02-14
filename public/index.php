@@ -3,8 +3,8 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		
 		<title>SC2MX</title>
-		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
-		<link rel="stylesheet" type="text/css" href="/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="./css/style.css" />
 		
 	</head> 
 	<body>
@@ -114,7 +114,7 @@
 			</div>
 		</div>
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script src="/js/bootstrap.js"></script>
+		<script src="./js/bootstrap.js"></script>
 	</body>
 </html>
 		
