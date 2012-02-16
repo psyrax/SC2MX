@@ -1,14 +1,14 @@
 <!doctype html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		
+
 		<title>SC2MX</title>
 		<link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
 		<link rel="stylesheet" type="text/css" href="./css/style.css" />
-		
-	</head> 
+
+	</head>
 	<body>
-	
+
 	<header>
 		<div class="navbar">
 			<div class="navbar-inner">
@@ -24,20 +24,20 @@
 							      Streams Estelares
 							      <b class="caret"></b>
 							</a>
-							<ul class="dropdown-menu">
-							 	<li>Offline	horusstv<li>
-								<li>Offline	fenixcoaching<li>
-								<li>Offline	rommeltj<li>
-								<li>Offline	jimrsng<li>
-								<li>Offline	famousc2<li>
-								<li>Offline	zafhir<li>
-								<li>Offline	beefchief3<li>
-								<li>Offline	lowcloud1<li>
-								<li>Offline	xesk1e<li>
-								<li>Offline	day9tv<li>
-								<li>Offline	zapo_colorado<li>
-								<li>Offline	xgsrevenge<li>
-								<li>Offline	angryzergc<li>
+							<ul id="stream-list" class="dropdown-menu">
+							 	<li>horusstv</li>
+								<li>fenixcoaching</li>
+								<li>rommeltj</li>
+								<li>jimrsng</li>
+								<li>famousc2</li>
+								<li>zafhir</li>
+								<li>beefchief3</li>
+								<li>lowcloud1</li>
+								<li>xesk1e</li>
+								<li>day9tv</li>
+								<li>zapo_colorado</li>
+								<li>xgsrevenge</li>
+								<li>angryzergc</li>
 							</ul>
 						</li>
 						<li><a href="#">Foros</a></li>
@@ -115,6 +115,6 @@
 		</div>
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script src="./js/bootstrap.js"></script>
+		<script src="./js/core.js"></script>
 	</body>
 </html>
-		
