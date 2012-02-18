@@ -1,6 +1,6 @@
 <?php 
 //Define feed URL
-$feed_url = 'http://www.sc2mx.com/forums/external.php?do=rss&type=newcontent&days=120&count=18';
+$feed_url = 'http://www.sc2mx.com/forums/external.php?do=rss&type=newcontent&days=120&count=9';
 //Get content of the URL
 $handler = curl_init($feed_url);
 curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
@@ -87,10 +87,21 @@ $feeds = new SimpleXmlElement($response, LIBXML_NOCDATA);
 			  				<div class="row">
 			  				<?php 
 			  				//Output feeds
-							foreach($feeds->channel->item as $feed) {?>
+							foreach($feeds->channel->item as $feed) {
+								preg_match_all('/<img[^>]+>/i',$feed->description, $img);
+								preg_match_all('/(src)=("[^"]*")/i',$img[0][0], $img_src);
+								?>
     							<div class="span3 anteriores">
-    								<h4 class="n-title"><?= $feed->title; ?></h4>
-    								<img src="http://placehold.it/220x150" /><br />
+    								<h4 class="n-title"><a href="<?= $feed->link; ?>"><?= $feed->title; ?></a></h4>
+    								<a href="<?= $feed->link; ?>" class="thumbnail">
+    									<?php if($img_src[2][0]!=""):?>
+    										<img src=<?= stripslashes($img_src[2][0]);?> class="n-img" />
+
+    									<?php else: ?>
+    										<img src="http://placehold.it/210x100" />
+    									<?php endif; ?>
+    								</a>
+    								<p class="n-p"><?= strip_tags($feed->description); ?></p>
     								<a href="<?= $feed->link ?>">Ver mas</a>
     							</div>
 							<?php }; ?>
@@ -99,7 +110,7 @@ $feeds = new SimpleXmlElement($response, LIBXML_NOCDATA);
 			  			<div class="span3">
 			  				<h3>Proximos eventos</h3>
 			  				<hr />
-			  				<ul>;
+			  				<ul>
 			  					<li>
 			  						<span class="label label-info">Fecha y hora</span>
 			  						<img src="http://placehold.it/195x50" />
@@ -121,6 +132,7 @@ $feeds = new SimpleXmlElement($response, LIBXML_NOCDATA);
 			  						<a href="btn btn-small btn-primary">Enviame un recordatorio</a>
 			  					</li>
 			  				</ul>
+			  				<object width="100%" height="600" id="obj_1297019226277"><param name="movie" value="http://chatsc2mx.chatango.com/group"><param name="wmode" value="transparent"><param name="AllowScriptAccess" value="always"><param name="AllowNetworking" value="all"><param name="AllowFullScreen" value="true"><param name="flashvars" value="cid=1297019226277&amp;a=CCCCCC&amp;b=51&amp;f=43&amp;i=87&amp;k=999999&amp;l=FFFFFF&amp;m=FFFFFF&amp;o=30&amp;r=100&amp;s=1"><embed id="emb_1297019226277" src="http://chatsc2mx.chatango.com/group" width="100%" height="600" wmode="transparent" allowscriptaccess="always" allownetworking="all" type="application/x-shockwave-flash" allowfullscreen="true" flashvars="cid=1297019226277&amp;a=CCCCCC&amp;b=51&amp;f=43&amp;i=87&amp;k=999999&amp;l=FFFFFF&amp;m=FFFFFF&amp;o=30&amp;r=100&amp;s=1"></object>
 			  				<h3>Patrocinios</h3>
 			  				<hr />
 			  				<img src="http://placehold.it/220x700" />
