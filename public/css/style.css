@@ -4,3 +4,16 @@
 .otros img{
 	margin:.2em 0 .2em 0;
 }
+.n-title{
+	height:36px;
+	margin-top:.5em;
+	margin-bottom:.5em;
+}
+.n-p{
+	text-align:left;
+	height:150px;
+	overflow: hidden;
+}
+.n-img{
+	height:100px;
+}
