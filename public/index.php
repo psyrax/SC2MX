@@ -1,4 +1,4 @@
-<?php 
+<?php
 //Define feed URL
 $feed_url = 'http://www.sc2mx.com/forums/external.php?do=rss&type=newcontent&days=120&count=9';
 //Get content of the URL
@@ -74,23 +74,25 @@ $events = new SimpleXmlElement($calendarxml, LIBXML_NOCDATA);
 		<div class="container">
 			<div class="row">
 			<div class="span12">
-				<ul class="nav nav-pills">
-				  <li class="active">
-				     <a href="#">Stream 1 </a>
-				  </li>
-				  <li>
-				     <a href="#">Stream 2</a>
-				  </li>
-				  <li>
-				     <a href="#">Stream 3</a>
-				  </li>
-				</ul>
-				<div class="row">
-					<div class="span9">
-						<img src="http://placehold.it/700x500" />
-					</div>
-					<div class="span3">
-						<img src="http://placehold.it/220x500" />
+				<div id="streams">
+					<ul class="nav nav-pills">
+					  <li class="active">
+					     <a href="#">Stream 1 </a>
+					  </li>
+					  <li>
+					     <a href="#">Stream 2</a>
+					  </li>
+					  <li>
+					     <a href="#">Stream 3</a>
+					  </li>
+					</ul>
+					<div class="row">
+						<div class="span9">
+							<img src="http://placehold.it/700x500" />
+						</div>
+						<div class="span3">
+							<img src="http://placehold.it/220x500" />
+						</div>
 					</div>
 				</div>
 				<h2>Fancy ad</h2>
@@ -113,7 +115,7 @@ $events = new SimpleXmlElement($calendarxml, LIBXML_NOCDATA);
 			  				<h3>Noticias</h3>
 			  				<hr />
 			  				<div class="row">
-			  				<?php 
+			  				<?php
 			  				//Output feeds
 							foreach($feeds->channel->item as $feed) {
 								preg_match_all('/<img[^>]+>/i',$feed->description, $img);
@@ -163,6 +165,7 @@ $events = new SimpleXmlElement($calendarxml, LIBXML_NOCDATA);
 		</div>
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script src="./js/bootstrap.js"></script>
+		<script src="http://www-cdn.justin.tv/javascripts/jtv_api.js"></script>
 		<script src="./js/core.js"></script>
 	</body>
 </html>
