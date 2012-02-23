@@ -1,4 +1,4 @@
-<?php
+<?php 
 //Define feed URL
 $feed_url = 'http://www.sc2mx.com/forums/external.php?do=rss&type=newcontent&days=120&count=9';
 //Get content of the URL
@@ -24,14 +24,14 @@ $events = new SimpleXmlElement($calendarxml, LIBXML_NOCDATA);
 <!doctype html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
+		
 		<title>SC2MX</title>
-		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
 		<link rel="stylesheet" type="text/css" href="./css/style.css" />
-
-	</head>
+		
+	</head> 
 	<body>
-
+	
 	<header>
 		<div class="navbar">
 			<div class="navbar-inner">
@@ -47,20 +47,20 @@ $events = new SimpleXmlElement($calendarxml, LIBXML_NOCDATA);
 							      Streams Estelares
 							      <b class="caret"></b>
 							</a>
-							<ul id="stream-list" class="dropdown-menu">
-							 	<li>horusstv</li>
-								<li>fenixcoaching</li>
-								<li>rommeltj</li>
-								<li>jimrsng</li>
-								<li>famousc2</li>
-								<li>zafhir</li>
-								<li>beefchief3</li>
-								<li>lowcloud1</li>
-								<li>xesk1e</li>
-								<li>day9tv</li>
-								<li>zapo_colorado</li>
-								<li>xgsrevenge</li>
-								<li>angryzergc</li>
+							<ul class="dropdown-menu">
+							 	<li>Offline	horusstv<li>
+								<li>Offline	fenixcoaching<li>
+								<li>Offline	rommeltj<li>
+								<li>Offline	jimrsng<li>
+								<li>Offline	famousc2<li>
+								<li>Offline	zafhir<li>
+								<li>Offline	beefchief3<li>
+								<li>Offline	lowcloud1<li>
+								<li>Offline	xesk1e<li>
+								<li>Offline	day9tv<li>
+								<li>Offline	zapo_colorado<li>
+								<li>Offline	xgsrevenge<li>
+								<li>Offline	angryzergc<li>
 							</ul>
 						</li>
 						<li><a href="#">Foros</a></li>
@@ -74,27 +74,6 @@ $events = new SimpleXmlElement($calendarxml, LIBXML_NOCDATA);
 		<div class="container">
 			<div class="row">
 			<div class="span12">
-				<div id="streams">
-					<ul class="nav nav-pills">
-					  <li class="active">
-					     <a href="#">Stream 1 </a>
-					  </li>
-					  <li>
-					     <a href="#">Stream 2</a>
-					  </li>
-					  <li>
-					     <a href="#">Stream 3</a>
-					  </li>
-					</ul>
-					<div class="row">
-						<div class="span9" id="stream_content">
-
-						</div>
-						<div class="span3">
-							<img src="http://placehold.it/220x500" />
-						</div>
-					</div>
-				</div>
 				<h2>Fancy ad</h2>
 				<img src="http://placehold.it/940x50" />
 					<div class="row">
@@ -115,7 +94,7 @@ $events = new SimpleXmlElement($calendarxml, LIBXML_NOCDATA);
 			  				<h3>Noticias</h3>
 			  				<hr />
 			  				<div class="row">
-			  				<?php
+			  				<?php 
 			  				//Output feeds
 							foreach($feeds->channel->item as $feed) {
 								preg_match_all('/<img[^>]+>/i',$feed->description, $img);
@@ -165,7 +144,6 @@ $events = new SimpleXmlElement($calendarxml, LIBXML_NOCDATA);
 		</div>
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script src="./js/bootstrap.js"></script>
-		<script src="http://www-cdn.justin.tv/javascripts/jtv_api.js"></script>
-		<script src="./js/core.js"></script>
 	</body>
 </html>
+		
