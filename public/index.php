@@ -74,6 +74,23 @@ $events = new SimpleXmlElement($calendarxml, LIBXML_NOCDATA);
 		<div class="container">
 			<div class="row">
 			<div class="span12">
+				<div id="streams">
+					<ul class="nav nav-pills">
+					  <li class="active">
+					     <a href="#">Stream 1 </a>
+					  </li>
+					  <li>
+					     <a href="#">Stream 2</a>
+					  </li>
+					  <li>
+					     <a href="#">Stream 3</a>
+					  </li>
+					</ul>
+					<div class="row">
+						<div class="span9" id="stream_content"></div>
+						<div class="span3" id="stream_chat"></div>
+					</div>
+				</div>
 				<h2>Fancy ad</h2>
 				<img src="http://placehold.it/940x50" />
 					<div class="row">
@@ -144,6 +161,8 @@ $events = new SimpleXmlElement($calendarxml, LIBXML_NOCDATA);
 		</div>
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script src="./js/bootstrap.js"></script>
+		<script src="./js/core.js"></script>
+
 	</body>
 </html>
 		
