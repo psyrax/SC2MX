@@ -23,18 +23,14 @@
                                         $('#streams ul.nav li').removeClass('active');
                                         $(this).parent('li').addClass('active');
 
-                                        if (player) {
-                                            player.play_live(item.channel.login);
-                                        }else{
-                                            player = createPlayer(item.channel.login);
-                                        }
+                                        player = showPlayer(item.channel.login);
                                         return false;
                                    });
                     var _li = $('<li />')
                     if (i == 0) {
                         _li.addClass('active');
                         if (!hasRun) {
-                            player = createPlayer(item.channel.login);
+                            showPlayer(item.channel.login);
                             hasRun = true;
                         }
                     }
@@ -51,15 +47,14 @@
 
     checkStreams();
 
-    var createPlayer = function(channel)
+    var showPlayer = function(channel)
     {
-        return jtv_api.new_player(document.getElementById('stream_content'), {
-            channel: channel,
-            consumer_key: 'myOA04swzXzosHMs5zVWw',
-            auto_play: true,
-            width: 700,
-            height: 500
+        $.ajaxSetup({cache: false});
+        $.get('get_embed.php?channel=' + channel, function (data) {
+            $('#stream_content').html(data);
+        });
+        $.get('get_embed.php?type=chat&channel=' + channel, function (data) {
+            $('#stream_chat').html(data);
         });
     }
-
 }( window.jQuery )
