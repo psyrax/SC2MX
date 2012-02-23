@@ -87,8 +87,8 @@ $events = new SimpleXmlElement($calendarxml, LIBXML_NOCDATA);
 					  </li>
 					</ul>
 					<div class="row">
-						<div class="span9">
-							<img src="http://placehold.it/700x500" />
+						<div class="span9" id="stream_content">
+
 						</div>
 						<div class="span3">
 							<img src="http://placehold.it/220x500" />
