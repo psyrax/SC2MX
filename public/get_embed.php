@@ -1,7 +1,7 @@
 <?php
 $allowed_channels = array('horusstv', 'fenixcoaching', 'rommeltj', 'jimrsng', 'famousc2',
                      'zafhir', 'beefchief3', 'lowcloud1', 'xesk1e', 'day9tv',
-                     'zapo_colorado', 'xgsrevenge', 'angryzerg', 'ignproleague', 'playhemtv', 'TheBrett');
+                     'zapo_colorado', 'xgsrevenge', 'angryzerg', 'fritangatv');
 
 $allowed_types = array('channel', 'chat');
 
@@ -24,6 +24,7 @@ if (!file_exists($cache_dir)) {
     }
 }
 
+
 if (file_exists($cache_file) && (time() - $expires < filemtime($cache_file))) {
     echo file_get_contents($cache_file);
 }else{
@@ -31,15 +32,16 @@ if (file_exists($cache_file) && (time() - $expires < filemtime($cache_file))) {
     file_put_contents($cache_file, $embed);
     echo $embed;
 }
+exit;
 
 
 function get_embed($channel, $type) {
     switch ($type) {
         case 'chat':
-            $url = 'http://api.justin.tv/api/channel/chat_embed/' . $channel . '?width=300&height=500';
+            $url = 'http://api.justin.tv/api/channel/chat_embed/' . $channel . '?width=300&height=500&auto_play=true';
             break;
         default:
-            $url = 'http://api.justin.tv/api/channel/embed/' . $channel . '?width=620&height=500';
+            $url = 'http://api.justin.tv/api/channel/embed/' . $channel . '?width=620&height=500&auto_play=true&volume=50';
             break;
     }
 

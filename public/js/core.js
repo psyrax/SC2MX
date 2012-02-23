@@ -8,7 +8,7 @@
     {
         streamers = ['horusstv', 'fenixcoaching', 'rommeltj', 'jimrsng', 'famousc2',
                      'zafhir', 'beefchief3', 'lowcloud1', 'xesk1e', 'day9tv',
-                     'zapo_colorado', 'xgsrevenge', 'angryzerg', 'ignproleague', 'playhemtv', 'TheBrett'];
+                     'zapo_colorado', 'xgsrevenge', 'angryzerg', 'fritangatv'];
 
         $.getJSON('http://api.justin.tv/api/stream/list.json?jsonp=?', {channel: streamers.join(',')}, function(data) {
             if (data.length > 0) {
