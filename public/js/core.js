@@ -8,7 +8,7 @@
     {
         streamers = ['horusstv', 'fenixcoaching', 'rommeltj', 'jimrsng', 'famousc2',
                      'zafhir', 'beefchief3', 'lowcloud1', 'xesk1e', 'day9tv',
-                     'zapo_colorado', 'xgsrevenge', 'angryzerg', 'ignproleague', 'playhemtv'];
+                     'zapo_colorado', 'xgsrevenge', 'angryzerg', 'ignproleague', 'playhemtv', 'TheBrett'];
 
         $.getJSON('http://api.justin.tv/api/stream/list.json?jsonp=?', {channel: streamers.join(',')}, function(data) {
             if (data.length > 0) {
@@ -42,19 +42,20 @@
             }
         });
 
-        setTimeout(checkStreams, 60000);
+        setTimeout(checkStreams, 120000);
     }
 
     checkStreams();
 
     var showPlayer = function(channel)
     {
-        $.ajaxSetup({cache: false});
+        $.ajaxSetup({cache: true});
         $.get('get_embed.php?channel=' + channel, function (data) {
             $('#stream_content').html(data);
         });
         $.get('get_embed.php?type=chat&channel=' + channel, function (data) {
             $('#stream_chat').html(data);
         });
+        $.ajaxSetup({cache: false});
     }
 }( window.jQuery )

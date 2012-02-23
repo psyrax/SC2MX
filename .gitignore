@@ -1,1 +1,4 @@
 sc2mx.sublime-workspace
+public/cache/*
+!public/cache/index.html
+php_errors.log
