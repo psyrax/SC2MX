@@ -26,7 +26,7 @@ $events = new SimpleXmlElement($calendarxml, LIBXML_NOCDATA);
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		
 		<title>SC2MX</title>
-		<link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="./css/style.css" />
 		
 	</head> 
@@ -71,6 +71,8 @@ $events = new SimpleXmlElement($calendarxml, LIBXML_NOCDATA);
     			</div>
   			</div>
 		</div>
+	</header>
+	<section>
 		<div class="container">
 			<div class="row">
 			<div class="span12">
@@ -87,8 +89,8 @@ $events = new SimpleXmlElement($calendarxml, LIBXML_NOCDATA);
 					  </li>
 					</ul>
 					<div class="row">
-						<div class="span9" id="stream_content"></div>
-						<div class="span3" id="stream_chat"></div>
+						<div class="span8" id="stream_content"></div>
+						<div class="span4" id="stream_chat"></div>
 					</div>
 				</div>
 				<h2>Fancy ad</h2>
@@ -159,6 +161,7 @@ $events = new SimpleXmlElement($calendarxml, LIBXML_NOCDATA);
 				</div>
 			</div>
 		</div>
+	</section>
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script src="./js/bootstrap.js"></script>
 		<script src="./js/core.js"></script>

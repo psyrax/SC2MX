@@ -50,10 +50,10 @@
     var showPlayer = function(channel)
     {
         $.ajaxSetup({cache: false});
-        $.get('get_embed.php?channel=' + channel, function (data) {
+        $.get('get_embed.php?width=620&height=500&channel=' + channel, function (data) {
             $('#stream_content').html(data);
         });
-        $.get('get_embed.php?type=chat&channel=' + channel, function (data) {
+        $.get('get_embed.php?width=300&height=500&type=chat&channel=' + channel, function (data) {
             $('#stream_chat').html(data);
         });
     }
