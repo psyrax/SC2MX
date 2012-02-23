@@ -5,10 +5,10 @@ $url = null;
 
 switch ($type) {
     case 'chat':
-        $url = 'http://api.justin.tv/api/channel/chat_embed/' . $channel . '?width=300&height=500';
+        $url = 'http://api.justin.tv/api/channel/chat_embed/' . $channel . '?width=300&height=500&volume=50&auto_play=true';
         break;
     default:
-        $url = 'http://api.justin.tv/api/channel/embed/' . $channel . '?width=620&height=500';
+        $url = 'http://api.justin.tv/api/channel/embed/' . $channel . '?width=620&height=500&auto_play=true';
         break;
 }
 
