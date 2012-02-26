@@ -59,3 +59,9 @@
         $.ajaxSetup({cache: false});
     }
 }( window.jQuery )
+
+$(".carchanger").click(function(){
+    //alert($(this).attr("data-change"));
+    var change = parseInt($(this).attr("data-change"));
+    $("#myCarousel").carousel(change);
+});

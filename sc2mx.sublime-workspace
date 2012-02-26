@@ -164,18 +164,10 @@
 	"buffers":
 	[
 		{
-			"file": "public/indexlarge.php",
-			"settings":
-			{
-				"buffer_size": 6323,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "public/css/style.css",
 			"settings":
 			{
-				"buffer_size": 221,
+				"buffer_size": 250,
 				"line_ending": "Unix"
 			}
 		},
@@ -183,7 +175,47 @@
 			"file": "public/index.php",
 			"settings":
 			{
-				"buffer_size": 5676,
+				"buffer_size": 7120,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/js/core.js",
+			"settings":
+			{
+				"buffer_size": 2185,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/css/bootstrap.min.css",
+			"settings":
+			{
+				"buffer_size": 82921,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<object id=\"jtv_player_flash\" classid=\"clsid:d27cdb6e-ae6d-11cf-96b8-444553540000\" width=\"353\" height=\"295\" codebase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0\">\n\n</object>",
+			"settings":
+			{
+				"buffer_size": 215,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/get_embed.php",
+			"settings":
+			{
+				"buffer_size": 1728,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/indexlarge.php",
+			"settings":
+			{
+				"buffer_size": 7329,
 				"line_ending": "Unix"
 			}
 		}
@@ -212,6 +244,7 @@
 	},
 	"file_history":
 	[
+		"/Users/psyrax/sc2mx/public/clase.php",
 		"/Users/psyrax/sc2mx/public/test.php",
 		"/Users/psyrax/Nuflick/public/application/config/database.php",
 		"/Users/psyrax/Nuflick/public/application/models/payment_model.php",
@@ -338,8 +371,7 @@
 		"/Users/psyrax/Nuflick/public/application/models/moviein_model.php",
 		"/Users/psyrax/Nuflick/public/application/views/admin/movie_edit/index_view.php",
 		"/Users/psyrax/Nuflick/public/application/views/admin/movie_add/index_view.php",
-		"/Users/psyrax/Nuflick/tricks/movie_rander.php",
-		"/Users/psyrax/Downloads/nathansmith-960-Grid-System-485d8ab/code/demo.html"
+		"/Users/psyrax/Nuflick/tricks/movie_rander.php"
 	],
 	"find":
 	{
@@ -357,6 +389,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"header",
 			"        $",
 			"container",
 			"0",
@@ -426,50 +459,23 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "public/indexlarge.php",
-					"settings":
-					{
-						"buffer_size": 6323,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2724,
-								2724
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1191.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "public/css/style.css",
 					"settings":
 					{
-						"buffer_size": 221,
+						"buffer_size": 250,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								171,
-								171
+								0,
+								0
 							]
 						],
 						"settings":
@@ -483,28 +489,164 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": "public/index.php",
 					"settings":
 					{
-						"buffer_size": 5676,
+						"buffer_size": 7120,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								436,
-								436
+								5043,
+								6946
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1944.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/js/core.js",
+					"settings":
+					{
+						"buffer_size": 2185,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "public/css/bootstrap.min.css",
+					"settings":
+					{
+						"buffer_size": 82921,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								82921
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 9249.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"settings":
+					{
+						"buffer_size": 215,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								205,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "public/get_embed.php",
+					"settings":
+					{
+						"buffer_size": 1728,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "public/indexlarge.php",
+					"settings":
+					{
+						"buffer_size": 7329,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7155,
+								7155
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2094.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -553,6 +695,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"inde",
+				"public/indexlarge.php"
+			],
 			[
 				"test",
 				"coreylib/test.php"

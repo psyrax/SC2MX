@@ -1,32 +1,24 @@
 <?php 
-
-$feed_url = 'http://www.sc2mx.com/forums/external.php?do=rss&type=newcontent&days=120&count=4';
+//Define feed URL
+$feed_url = 'http://www.sc2mx.com/forums/external.php?do=rss&type=newcontent&days=120&count=9';
+//Get content of the URL
 $handler = curl_init($feed_url);
 curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($handler, CURLOPT_HEADER, 0);
 $response = curl_exec ($handler);
 curl_close($handler);
+//Prase feeds into class
 $feeds = new SimpleXmlElement($response, LIBXML_NOCDATA);
 
-$posts_url = 'http://sc2mx.com/forums/external.php?type=RSS2&days=120&count=9&fulldesc=TRUE';
-$postcurl = curl_init($posts_url);
-curl_setopt($postcurl, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($postcurl, CURLOPT_HEADER, 0);
-$postres = curl_exec ($postcurl);
-curl_close($postcurl);
-$posts = new SimpleXmlElement($postres, LIBXML_NOCDATA);
-
-
-
-
-$calendar="https://www.google.com/calendar/feeds/fi6qgmpb0669gfecm97albjufk%40group.calendar.google.com/public/basic?singleevents=true&orderby=starttime&max-results=5&sortorder=ascending";
+$calendar="https://www.google.com/calendar/feeds/fi6qgmpb0669gfecm97albjufk%40group.calendar.google.com/public/basic?singleevents=true&orderby=starttime&max-results=5";
 $calendarcurl = curl_init($calendar);
 curl_setopt($calendarcurl, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($calendarcurl, CURLOPT_HEADER, 0);
 $calendarxml = curl_exec ($calendarcurl);
 curl_close($calendarcurl);
+//Prase feeds into class
 $events = new SimpleXmlElement($calendarxml, LIBXML_NOCDATA);
-
+//print_r($events);
 ?>
 
 <!doctype html>
@@ -61,8 +53,6 @@ $events = new SimpleXmlElement($calendarxml, LIBXML_NOCDATA);
 		<div class="container">
 			<div class="row">
 			<div class="span12">
-				<h3>Fancy ad</h3>
-				<img src="http://placehold.it/940x50" />
 				<div id="streams">
 					<ul class="nav nav-pills">
 					</ul>
@@ -74,74 +64,40 @@ $events = new SimpleXmlElement($calendarxml, LIBXML_NOCDATA);
 				</div>
 					<div class="row">
 			  			<div class="span9">
-		  					<h2>Noticias</h2>
-							<div id="myCarousel" class="carousel slide">
-							    <div class="carousel-inner">
-							    	<?php $a=0;foreach($feeds->channel->item as $mainer ){
-							    		preg_match_all('/<img[^>]+>/i',$mainer->description, $img1);
-										preg_match_all('/(src)=("[^"]*")/i',$img1[0][0], $img_src1);
-										if($a==0):
-											$act="active ";
-										else:
-											$act="";
-										endif;
-									?>
-								      <div class="<?= $act;?>item hcontrol">
-								        <img src=<?= stripslashes($img_src1[2][0]);?> alt="">
-								        <div class="carousel-caption">
-								          <h4><?= $mainer->title; ?></h4>
-								          <p><?= substr(strip_tags($mainer->description),0,200); ?>... <a href="<?= $mainer->link ?>">Ver mas</a></p>
-								        </div>
-								      </div>
-								   <?php $a++;}; ?>
-							    </div>
-							    <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-							    <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
-							</div>			  						
-								<div class="otros">
-			  						<ul class="thumbnails">
-			  						<?php $b=0;foreach($feeds->channel->item as $changer ){
-			  							preg_match_all('/<img[^>]+>/i',$changer->description, $img2);
-										preg_match_all('/(src)=("[^"]*")/i',$img2[0][0], $img_src2);
-									?>
-									<li class="span2">
-									<a href="#" class="carchanger thumbnail" data-change="<?= $b;?>">
-			  							<img src=<?= stripslashes($img_src2[2][0]);?>/>
-			  							<h5><?= $changer->title; ?></h5>
-			  						</a>
-			  						</li>
-			  						<?php $b++;}?>
-			  						</ul>
+			  				<div class="row">
+			  					<div class="span7">
+			  						<h1>Destacado principal</h1>
+			  						<img src="http://placehold.it/540x400" />
+			  					</div>
+			  					<div class="span2 otros">
+			  						<h3>Otros videos</h3>
+			  						<img src="http://placehold.it/140x100" />
+			  						<img src="http://placehold.it/140x100" />
+			  						<img src="http://placehold.it/140x100" />
+			  						<img src="http://placehold.it/140x100" />
+			  					</div>
 			  				</div>
-			  				<h3>&Uacute;ltimas entradas en el foro</h3>
+			  				<h3>Noticias</h3>
 			  				<hr />
 			  				<div class="row">
 			  				<?php 
 			  				//Output feeds
-							foreach($posts->channel->item as $feed) {
+							foreach($feeds->channel->item as $feed) {
 								preg_match_all('/<img[^>]+>/i',$feed->description, $img);
 								preg_match_all('/(src)=("[^"]*")/i',$img[0][0], $img_src);
-								$namespaces = $feed->getNameSpaces(true);
-								//Now we don't have the URL hard-coded
-								$dc = $feed->children($namespaces['dc']); 
-								$content = $feed->children($namespaces['content']); 
 								?>
-    							<div class="span9">
-	    							<div class="row">
-	    								<div class="span2">
-	    									<a href="http://sc2mx.com/forums/member.php?<?= $dc->uid; ?>" target="_blank">
-	    										<h4 ><?= $dc->creator;?></h4>
-												<img src="http://sc2mx.com/forums/image.php?u=<?= $dc->uid; ?>" />				
-		    								</a>
-	    								</div>
-	    								<div class="span7 foros">
-		    								<h4><a href="<?= $feed->link; ?>"><?= $feed->title; ?></a></h4>
-		    								<h5>Publicado: <?= date("Y-m-d H:i", strtotime($feed->pubDate)); ?></h5>
-		    								<p ><?= $content->encoded; ?></p>
-		    								<a href="<?= $feed->link ?>">Ver en el foro</a>
-	    								</div>
-	    							</div>
-	    							<hr />
+    							<div class="span3 anteriores">
+    								<h4 class="n-title"><a href="<?= $feed->link; ?>"><?= $feed->title; ?></a></h4>
+    								<a href="<?= $feed->link; ?>" class="thumbnail">
+    									<?php if($img_src[2][0]!=""):?>
+    										<img src=<?= stripslashes($img_src[2][0]);?> class="n-img" />
+
+    									<?php else: ?>
+    										<img src="http://placehold.it/210x100" />
+    									<?php endif; ?>
+    								</a>
+    								<p class="n-p"><?= strip_tags($feed->description); ?></p>
+    								<a href="<?= $feed->link ?>">Ver mas</a>
     							</div>
 							<?php }; ?>
 							</div>

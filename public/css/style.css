@@ -1,9 +1,6 @@
 .anteriores{
 	text-align:center;
 }
-.otros img{
-	margin:.2em 0 .2em 0;
-}
 .n-title{
 	height:36px;
 	margin-top:.5em;
@@ -17,5 +14,10 @@
 .n-img{
 	height:100px;
 }
-
+.hcontrol{
+	height:490px;
+}
 #streams { display: none; }
+.foros{
+	overflow: hidden;
+}
